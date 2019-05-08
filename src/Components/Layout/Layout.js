@@ -1,5 +1,5 @@
 import React from 'react';
-import Auxi from '../../Auxii/Auxi';
+import Auxi from '../../Auxi/Auxi';
 import clasess from './Layout.module.css';
 const layout = (props) => {
     return (

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Auxi from '../../Auxii/Auxi';
+import Auxi from '../../Auxi/Auxi';
 import Burger from '../../Components/Burger/Burger';
 import BuildControls from '../../Components/Burger/BuildControls/BuildControls';
+import Model from '../../Components/UI/Model/Model';
+import OrderSummery from '../../Components/OrderSummery/OrderSummery';
 
 const INGREDIENT_PRICES = {
     salad: 0.5,
@@ -18,7 +20,7 @@ class BurgerBuilder extends Component {
             meat: 0
         },
         totalPrice: 4,
-        pirchaseable:false
+        pirchaseable: false
     }
 
     updatePurchaseState(ingredients) {
@@ -34,7 +36,7 @@ class BurgerBuilder extends Component {
                 return sum + el;
             }, 0);
 
-        this.setState({purchasable: sum > 0})
+        this.setState({ purchasable: sum > 0 })
     }
 
     addIngredients = (type) => {
@@ -68,7 +70,7 @@ class BurgerBuilder extends Component {
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceDeduction;
         this.setState({ totalPrice: newPrice, ingredients: updatedIngredients })
-        this.updatePurchaseState(updatedIngredients);   
+        this.updatePurchaseState(updatedIngredients);
     }
 
 
@@ -84,6 +86,11 @@ class BurgerBuilder extends Component {
         }
         return (
             <Auxi>
+                <Model>
+                    <OrderSummery ingredients={this.state.ingredients} />
+                </Model>
+
+
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
                     ingredientAdded={this.addIngredients}
