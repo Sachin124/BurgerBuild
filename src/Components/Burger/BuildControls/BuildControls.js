@@ -14,21 +14,21 @@ const buildControls = (props) => {
         <Auxi>
             <div className={classes.BuildControls}>
                 <div>Current Price: <strong> {props.totalPrice.toFixed(2)}</strong></div>
-                {controls.map(ctrl => (
+                 {controls.map(ctrl => (
                     <BuildControl key={ctrl.label}
                         type={ctrl.type}
-                        label={ctrl.label} 
-                        added={() => props.ingredientAdded(ctrl.type)} 
-                        removed={()=> props.ingredientRemoved(ctrl.type)} 
-                        disabled={props.disabledInfo[ctrl.type]}/>
+                        label={ctrl.label}
+                        added={() => props.ingredientAdded(ctrl.type)}
+                        removed={() => props.ingredientRemoved(ctrl.type)}
+                        disabled={props.disabledInfo[ctrl.type]} />
                 ))}
-                    <button className={classes.OrderButton}
-                    disabled={!props.pirchaseable}>ORDER NOW</button>
+                <button
+                    className={classes.OrderButton}
+                    disabled={!props.purchasable}
+                    onClick={props.ordered}>ORDER NOW
+                    </button>
             </div>
         </Auxi>
-    )
-
-
-
+    );
 }
 export default buildControls;
