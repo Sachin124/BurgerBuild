@@ -2,8 +2,8 @@ import React from 'react';
 import Logo from '../../Logo/Logo';
 import Navigationlists from '../NavigationLists/NavigationLists';
 import classes from './SideDrawer.module.css'
-import Auxi from '../../../Auxi/Auxi';
 import BackDrop from '../../UI/BackDrop/BackDrop';
+import Auxi from '../../../hoc/Auxi/Auxi';
 const sideDrawer = (props) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
     if (props.opened) {

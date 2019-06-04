@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Auxi from '../../Auxi/Auxi';
+import Auxi from '../../hoc/Auxi/Auxi';
 import Burger from '../../Components/Burger/Burger';
 import BuildControls from '../../Components/Burger/BuildControls/BuildControls';
 import Model from '../../Components/UI/Model/Model';
@@ -94,6 +94,7 @@ class BurgerBuilder extends Component {
         for (let key in disabledInfo) {
             disabledInfo[key] = disabledInfo[key] <= 0
         }
+
         return (
             <Auxi>
                 <Model show={this.state.purchasing} modelClosed={this.removeModelHandler}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './BuildControls.module.css';
 import BuildControl from './BuildControl/BuildControl';
-import Auxi from '../../../Auxi/Auxi';
+import Auxi from '../../../hoc/Auxi/Auxi';
 
 const controls = [
     { label: 'Salad', type: 'salad' },
